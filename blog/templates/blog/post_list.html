@@ -5,20 +5,12 @@
   <title>Django Blog</title>
 </head>
 <body>
-  <div>
-            <h1><a href="">Django Girls Blog</a></h1>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">İlk Blogum</a></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore illo eligendi quas minima quo accusamus nam numquam ut nesciunt earum modi tempora ab reiciendis, eveniet dolores reprehenderit facilis, error repellendus. </p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">İkinci gönderim</a></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt hic voluptate voluptas eveniet a eum sapiente quasi iste vel at nobis porro, et ipsum, laudantium ad. Vel delectus reiciendis provident.</p>
-        </div>
+  {% for post in posts %}
+      <div>
+          <p>published: {{ post.yayinlama_tarihi }}</p>
+          <h1><a href="">{{ post.baslik }}</a></h1>
+          <p>{{ post.yazi|linebreaks }}</p>
+      </div>
+  {% endfor %}
   </body>
 </html>
