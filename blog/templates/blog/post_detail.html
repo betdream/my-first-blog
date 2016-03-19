@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if post.yayinlama_tarihi %}
+            <div class="date">
+                {{ post.yayinlama_tarihi }}
+            </div>
+        {% endif %}
+        <h1>{{ post.baslik }}</h1>
+        <p>{{ post.yazi|linebreaks }}</p>
+    </div>
+{% endblock %}
