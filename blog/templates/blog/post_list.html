@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Django Blog</title>
-</head>
-<body>
-  {% for post in posts %}
-      <div>
-          <p>published: {{ post.yayinlama_tarihi }}</p>
-          <h1><a href="">{{ post.baslik }}</a></h1>
-          <p>{{ post.yazi|linebreaks }}</p>
-      </div>
-  {% endfor %}
-  </body>
-</html>
+{% extends 'blog/base.html' %}
+
+
+  {% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.yayinlama_tarihi }}
+            </div>
+            <h1><a href="">{{ post.baslik }}</a></h1>
+            <p>{{ post.yazi|linebreaks }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
